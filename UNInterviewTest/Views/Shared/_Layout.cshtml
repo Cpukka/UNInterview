@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - CompanyXYZ</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" title="more options">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Company XYZ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Leave", "Index", "Leave")</li>
+                    <li>@Html.ActionLink("Employee", "Index", "Employee")</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - CompanyXYZ</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <script>
+        $(document).ready(function () {
+
+            //$("#SelectedDate").datepicker({
+            //    showOn: 'button',
+            //    buttonImageOnly: true,
+            //    buttonImage: '/images/calendar.gif'
+            //});
+
+            //$("#StartDate").datepicker({ dateFormat: "dd/mm/yyyy"});
+            //$("#EndDate").datepicker({ dateFormat: "dd/mm/yyyy" });
+
+            //$('.date').datepicker();
+
+
+            $('input[type=datetime]').datepicker();  
+
+
+            //$('input[type=datetime]').datepicker({
+            //    dateFormat: "dd-mm-yy",
+            //    changeMonth: true,
+            //    changeYear: true   
+            //});  
+
+            //$('.StartDate').datepicker({
+            //    dateFormat: "dd/mm/yy",
+            //    changeYear: true,
+            //    changeMonth: true
+            //});
+
+            //var myDateVal = moment('${value}').format('DD-MM-YYYY');
+            //$('#StartDate').datepicker().datepicker('setDate', myDateVal);
+
+
+
+            //$('.EndDate').datepicker({
+            //    dateFormat: "dd/mm/yy",
+            //    changeYear: true,
+            //    changeMonth: true
+            //});
+
+            //var myDateVal = moment('${value}').format('DD-MM-YYYY');
+            //$('#EndDate').datepicker().datepicker('setDate', myDateVal);
+
+        });
+
+    </script>
+</body>
+</html>
